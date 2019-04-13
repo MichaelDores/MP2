@@ -74,6 +74,7 @@
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
+
                         @endif
                     @endauth
                 </div>
@@ -81,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Mini Project 2!
                 </div>
 
                 <div class="links">
