@@ -15,4 +15,5 @@ class UsersTableSeeder extends Seeder
            $u->cars()->save(factory(App\Cars::class)->make());
         });
     }
+
 }
