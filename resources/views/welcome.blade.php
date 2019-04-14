@@ -85,6 +85,7 @@
                     Mini Project 2!
                 </div>
                 <h1>Cars!!!</h1>
+                <img src="https://cdn.motor1.com/images/mgl/EmkQw/s1/ferrari-f40-tribute-render.jpg" align="center" class="img-fluid img-thumbnail" alt="Giants" width="400" height="175">
 
 
                 </div>
