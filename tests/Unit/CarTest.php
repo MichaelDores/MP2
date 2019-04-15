@@ -39,4 +39,11 @@ class CarTest extends TestCase
         $this->assertEquals('50');
         $carcount( App\users::class, 50 )->create();
     }
+    public function testyearvariable()
+    {
+        $this->assertThat($Year, $this->logicalAnd(
+            $this->isType('int'),
+            $this->greaterThan(0)
+        ));
+    }
 }
