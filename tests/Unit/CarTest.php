@@ -34,4 +34,9 @@ class CarTest extends TestCase
         $this->assertEquals(404, $response->getStatusCode());
         $this->notSeeInDatabase('Make', ['deleted_at' => null, 'id' => 1]);
     }
+    public function testcarscount()
+    {
+        $this->assertEquals('50');
+        $carcount( App\users::class, 50 )->create();
+    }
 }
