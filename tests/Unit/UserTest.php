@@ -26,7 +26,7 @@ class UserTest extends TestCase
     }
     public function testupdateuser()
     {
-        $carousel = factory(App\Users::class)->create();
+        $user = factory(App\Users::class)->create();
 
         $data = [
             'name' => $this->faker->word,
@@ -36,6 +36,12 @@ class UserTest extends TestCase
         $update = $user->updatename($user);
 
         $this->assertTrue($update);
-        $this->assertEquals($user['name'], $carousel->Steven Smith);
+        $this->assertEquals($user['name'], $name->Steven);
+    }
+    public function testDeleteMethod()
+    {
+        $response = $this->call('DELETE', '/App/users', ['_token' => csrf_token()]);
+        $this->assertEquals(404, $response->getStatusCode());
+        $this->notSeeInDatabase('name', ['deleted_at' => null, 'id' => 1]);
     }
 }
