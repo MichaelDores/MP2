@@ -44,4 +44,9 @@ class UserTest extends TestCase
         $this->assertEquals(404, $response->getStatusCode());
         $this->notSeeInDatabase('name', ['deleted_at' => null, 'id' => 1]);
     }
+    public function testuserscount()
+    {
+        $this->assertEquals('53');
+        $usercount( App\users::class, 53 )->create();
+    }
 }
