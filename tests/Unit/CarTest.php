@@ -28,18 +28,10 @@ class CarTest extends TestCase
         $car = new Model_User($carData);
         $car->save();
     }
-    public function testupdatecar()
+    public function testDeleteMethod()
     {
-        $car = factory(App\cars::class)->create();
-
-        $data = [
-            'year' => $this->faker->interger,
-        ];
-
-        $car = new year($car);
-        $update = $car->Updateyear($car);
-
-        $this->assertTrue($update);
-        $this->assertEquals($car['year'], $year->2000);
+        $response = $this->call('DELETE', '/App/cars', ['_token' => csrf_token()]);
+        $this->assertEquals(404, $response->getStatusCode());
+        $this->notSeeInDatabase('Make', ['deleted_at' => null, 'id' => 1]);
     }
 }
