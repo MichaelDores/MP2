@@ -28,4 +28,18 @@ class CarTest extends TestCase
         $car = new Model_User($carData);
         $car->save();
     }
+    public function testupdatecar()
+    {
+        $car = factory(App\cars::class)->create();
+
+        $data = [
+            'year' => $this->faker->interger,
+        ];
+
+        $car = new year($car);
+        $update = $car->Updateyear($car);
+
+        $this->assertTrue($update);
+        $this->assertEquals($car['year'], $year->2000);
+    }
 }
