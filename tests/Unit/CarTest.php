@@ -44,4 +44,9 @@ class CarTest extends TestCase
         $this->assertThat($model, $this->logicalAnd(
             $this->isType('string')        ));
     }
+    public function testmakedatavariables()
+    {
+        $this->assertThat($make, $this->logicalAnd(
+            $this->dataName('Ford','Honda','Toyota') ));
+    }
 }
