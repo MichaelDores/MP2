@@ -14,12 +14,28 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function testInsert()
+    public function testCanCreateUser()
     {
+        $userData = array(
+            'name'  =>  'Tom',
 
-        $newusers = new Users();
-        $newusers->setid('52');
-        $newusers->setname(Tom);
-        $newusers->setemail('tom@email.com');
+        );
+        $user = new Model_User($userData);
+        $user->save();
+
+    }
+    public function testupdateuser()
+    {
+        $carousel = factory(App\Users::class)->create();
+
+        $data = [
+            'name' => $this->faker->word,
+        ];
+
+        $user = new name($user);
+        $update = $user->updatename($user);
+
+        $this->assertTrue($update);
+        $this->assertEquals($user['name'], $carousel->Steven Smith);
     }
 }
